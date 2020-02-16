@@ -7,13 +7,19 @@
 <body>
   <p *ngIf="!issueList"><em>Loading...</em></p>
 
-  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="issueList">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search here...">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+  <table *ngIf="issueList">
     <thead>
       <tr>
-        <th>Issue Id</th>}
+        <th>Issue Id</th>
         <th>Description</th>
         <th>TimeStamp</th>
-        <th>ContactEmail</th>
+        <th>Contact Email</th>
         <th>Classification</th>
         <th>Status</th>
         <th>Service Type</th>
@@ -34,12 +40,15 @@
         <td>{{ issue.First_Name }}</td>
         <td>{{ issue.Second_Name }}</td>
         <td>
-            <a [routerLink]="['/issue/',issue.IssueId]"> Edit </a>
-            <a [routerLink]=""(click)="delete(issue.IssueId)"> Delete </a>
+            <a [routerLink]="['/issue/',issue.IssueId]"> Details </a>
         </td>
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
       </tr>
     </tbody>
   </table>
+</div>
 </body>
 </html>
 

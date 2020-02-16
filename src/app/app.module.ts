@@ -28,6 +28,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
+      { path: '', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
     ])
   ],

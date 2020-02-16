@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import {
+import { MatPaginatorModule,
     MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
     MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule, MatListModule, MatSelectModule, MatSnackBarModule
 } from '@angular/material';
@@ -25,7 +25,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         MatSidenavModule,
         MatListModule,
         MatSelectModule,
-        MatSnackBarModule
+        MatSnackBarModule, 
+        MatPaginatorModule
         // FlexLayoutModule
     ],
     exports: [
