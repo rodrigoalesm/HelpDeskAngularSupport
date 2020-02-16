@@ -8,12 +8,15 @@ import { CustomMaterialModule } from './_modules/material.module';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { IssueListComponent } from './issuelist/issuelist.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    IssueListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,10 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     CustomMaterialModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'issue-list', component: IssueListComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

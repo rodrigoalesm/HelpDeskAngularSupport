@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p *ngIf="!issueList"><em>Loading...</em></p>
+
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employeeList">
+    <thead>
+      <tr>
+        <th>Issue Id</th>
+        <th>Client Id</th>
+        <th>Description</th>
+        <th>TimeStamp</th>
+        <th>ContactEmail</th>
+        <th>Classification</th>
+        <th>Status</th>
+        <th>Service Type</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issueList">
+        <td>{{ issue.IssueId }}</td>
+        <td>{{ issue.ClientId }}</td>
+        <td>{{ issue.Description }}</td>
+        <td>{{ issue.TimeStamp }}</td>
+        <td>{{ issue.ContactEmail }}</td>
+        <td>{{ issue.Classification }}</td>
+        <td>{{ issue.Status }}</td>
+        <td>{{ issue.ServiceType }}</td>
+        <td>{{ issue.FirstName }}</td>
+        <td>{{ issue.LastName }}</td>
+        <td>
+            <a [routerLink]="['/issue/',issue.IssueId]"> Edit </a>
+            <a [routerLink]=""(click)="delete(issue.IssueId)"> Delete </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
