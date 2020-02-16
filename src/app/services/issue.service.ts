@@ -8,7 +8,7 @@ import { Issue } from '../model/issue.model'
 })
 export class IssueService {
 
-  private baseUrl = 'http://localhost:8080/issues/';
+  private baseUrl = 'https://localhost:44371/api/issue/';
 
   constructor(private http: HttpClient) { }
 

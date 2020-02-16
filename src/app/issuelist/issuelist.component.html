@@ -7,11 +7,10 @@
 <body>
   <p *ngIf="!issueList"><em>Loading...</em></p>
 
-  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employeeList">
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="issueList">
     <thead>
       <tr>
-        <th>Issue Id</th>
-        <th>Client Id</th>
+        <th>Issue Id</th>}
         <th>Description</th>
         <th>TimeStamp</th>
         <th>ContactEmail</th>
@@ -25,16 +24,15 @@
     </thead>
     <tbody>
       <tr *ngFor="let issue of issueList">
-        <td>{{ issue.IssueId }}</td>
-        <td>{{ issue.ClientId }}</td>
+        <td>{{ issue.Id }}</td>
         <td>{{ issue.Description }}</td>
-        <td>{{ issue.TimeStamp }}</td>
-        <td>{{ issue.ContactEmail }}</td>
+        <td>{{ issue.Time_Stamp }}</td>
+        <td>{{ issue.Contact_Email }}</td>
         <td>{{ issue.Classification }}</td>
         <td>{{ issue.Status }}</td>
-        <td>{{ issue.ServiceType }}</td>
-        <td>{{ issue.FirstName }}</td>
-        <td>{{ issue.LastName }}</td>
+        <td>{{ issue.Service_Type }}</td>
+        <td>{{ issue.First_Name }}</td>
+        <td>{{ issue.Second_Name }}</td>
         <td>
             <a [routerLink]="['/issue/',issue.IssueId]"> Edit </a>
             <a [routerLink]=""(click)="delete(issue.IssueId)"> Delete </a>
