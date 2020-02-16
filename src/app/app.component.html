@@ -1,0 +1,41 @@
+<div *ngIf="isLoggedIn">
+  <mat-toolbar color="primary">
+
+      <mat-toolbar-row>
+          <button mat-icon-button>
+              <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+          </button>
+          <span class="menu-spacer"></span>
+          <div>
+              <a mat-button [routerLink]="'/issues'"> Show Issues </a>
+              <a mat-button [routerLink]="'/asign-issues'"> Assign Issues </a>
+              <a mat-button [routerLink]="'/add-user'"> Add User </a>
+              <a mat-button [routerLink]="'/about'"> About </a>
+              <a mat-button (click)="logout()" > Log Out </a>
+
+          </div>
+      </mat-toolbar-row>
+
+  </mat-toolbar>
+  <mat-sidenav-container>
+      <mat-sidenav #sidenav>
+          <mat-nav-list>
+
+            <a mat-list-item [routerLink]="'/issues'"> Show Issues </a>
+            <a mat-list-item [routerLink]="'/asign-issues'"> Assign Issues </a>
+            <a mat-list-item [routerLink]="'/add-user'"> Add User </a>
+            <a mat-list-item [routerLink]="'/about'"> About </a>
+
+          </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+          <div style="height: 88vh;">
+
+              <router-outlet></router-outlet>
+          </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>

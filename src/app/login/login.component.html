@@ -1,0 +1,27 @@
+<div>
+    <mat-toolbar>
+       <span>LogIn</span> 
+    </mat-toolbar>
+    <mat-card class="fc-card">
+        <mat-card-content>
+            <form class="fc-form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="my@email.com" [formControl]="email" required>
+                <mat-error></mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Password</mat-label> 
+                <input matInput type="password" placeholder="Input Password" [formControl]="password" required>
+            </mat-form-field>
+        <mat-card-actions>
+            <mat-card-actions>
+                <button mat-raised-button type="submit" color="primary">LogIn</button>
+            </mat-card-actions>
+            </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
