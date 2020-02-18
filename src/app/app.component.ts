@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   title = 'Help Desk - Support';
 
-  isLoggedIn: Boolean = true;//TODO make it false
+  isLoggedIn: Boolean = false;//TODO make it false
   subscription: Subscription;
 
   constructor(private router: Router,
