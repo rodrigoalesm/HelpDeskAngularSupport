@@ -3,6 +3,8 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 
+//lol
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
