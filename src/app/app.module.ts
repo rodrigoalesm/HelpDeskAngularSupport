@@ -34,6 +34,7 @@ import { SupervisorComponent } from './supervisor/supervisor.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
+      { path: 'supervisor', component: SupervisorComponent },
       { path: '', component: CreateUserComponent},
     ])
   ],

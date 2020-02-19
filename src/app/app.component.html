@@ -7,6 +7,7 @@
           </button>
           <span class="menu-spacer"></span>
           <div>
+              <a mat-button [routerLink]="'/supervisor'"> Supervisor </a>
               <a mat-button [routerLink]="'/issue-list'"> Show Issues </a>
               <a mat-button [routerLink]="'/asign-issues'"> Assign Issues </a>
               <a mat-button [routerLink]="'/add-user'"> Add User </a>
@@ -20,7 +21,7 @@
   <mat-sidenav-container>
       <mat-sidenav #sidenav>
           <mat-nav-list>
-
+            <a mat-button [routerLink]="'/supervisor'"> Supervisor </a>
             <a mat-list-item [routerLink]="'/issue-list'"> Show Issues </a>
             <a mat-list-item [routerLink]="'/asign-issues'"> Assign Issues </a>
             <a mat-list-item [routerLink]="'/add-user'"> Add User </a>

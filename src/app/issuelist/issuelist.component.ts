@@ -45,14 +45,14 @@ export class IssueListComponent {
 }
 
 interface IssueData {
-    Id: number;
-    Description: string;
-    Time_Stamp: Date;
-    Contact_Email: string;
-    Classification: string;
-    Service_Type: string;
-    Status: string;
-    Second_Name: string;
-    First_Name: string;
+  Id: number;
+  Description: string;
+  Time_Stamp: Date;
+  Contact_Email: string;
+  Classification: string;
+  Service_Type: string;
+  Status: string;
+  Second_Name: string;
+  First_Name: string;
 }
 
