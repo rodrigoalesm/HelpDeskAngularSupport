@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p *ngIf="!commentList"><em>Loading...</em></p>
+
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search here...">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+  <table class="table table-bordered" *ngIf="issueList">
+    <thead>
+      <tr>
+        <th>Issue Id</th>
+        <th>Description</th>
+        <th>TimeStamp</th>
+        <th>Classification</th>
+        <th>Status</th>
+        <th>Service Type</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issueList">
+        <td width="5%">{{ issue.Id }}</td>
+        <td width="40%">{{ issue.Description }}</td>
+        <td width="15%">{{ issue.Time_Stamp }}</td>
+        <td width="10%">{{ issue.Classification }}</td>
+        <td width="15%">{{ issue.Status }}</td>
+        <td width="15%">{{ issue.Service_Type }}</td>
+        <td>
+            <a [routerLink]="['/issue/',issue.IssueId]"> Details </a>
+        </td>
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+
+<h2>Issue Details</h2>
+
+<hr/>
+
+<div *ngIf="comment">
+    <div>
+        <label><b>User Name: </b></label>{{comment.userId}}
+    </div>
+    <div>
+        <label><b>Description: </b></label>{{comment.description}}
+    </div>
+    <div>
+        <label><b>Timestamp: </b></label>{{comment.timeStamp}}
+    </div>
+</div>
+
+<br/>
+
+<button (click)="list()" class="btn btn-primary">Back</button>
+<br>
+</html>
+
