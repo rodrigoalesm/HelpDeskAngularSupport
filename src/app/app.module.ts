@@ -12,6 +12,7 @@ import { IssueListComponent } from './issuelist/issuelist.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { SupervisorComponent } from './supervisor/supervisor.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     LoginComponent,
     HomeComponent,
     IssueListComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    SupervisorComponent
   ],
   imports: [
     BrowserModule,
