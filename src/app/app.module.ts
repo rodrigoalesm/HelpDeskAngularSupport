@@ -11,13 +11,15 @@ import { HomeComponent } from './home/home.component';
 import { IssueListComponent } from './issuelist/issuelist.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    IssueListComponent
+    IssueListComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
