@@ -32,6 +32,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
+      { path: '', component: CreateUserComponent},
     ])
   ],
   providers: [],
