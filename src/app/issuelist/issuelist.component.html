@@ -19,12 +19,9 @@
         <th>Issue Id</th>
         <th>Description</th>
         <th>TimeStamp</th>
-        <th>Contact Email</th>
         <th>Classification</th>
         <th>Status</th>
         <th>Service Type</th>
-        <th>First Name</th>
-        <th>Last Name</th>
         <th></th>
       </tr>
     </thead>
@@ -33,12 +30,9 @@
         <td>{{ issue.Id }}</td>
         <td>{{ issue.Description }}</td>
         <td>{{ issue.Time_Stamp }}</td>
-        <td>{{ issue.Contact_Email }}</td>
         <td>{{ issue.Classification }}</td>
         <td>{{ issue.Status }}</td>
         <td>{{ issue.Service_Type }}</td>
-        <td>{{ issue.First_Name }}</td>
-        <td>{{ issue.Second_Name }}</td>
         <td>
             <a [routerLink]="['/issue/',issue.IssueId]"> Details </a>
         </td>
