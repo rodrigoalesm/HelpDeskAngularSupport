@@ -1,0 +1,96 @@
+<p>create-user works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <h3>User</h3>
+  <hr />
+  <form [formGroup]="userForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="usersId" hidden>
+      </div>
+
+      <label class=" control-label col-md-12" for="Name">Name</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="name">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'name') && formDir.submitted">
+        Name is required.
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class=" control-label col-md-12" for="SecondLastName">Second Last Name</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="secondLastName">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'secondLastName') && formDir.submitted">
+        Second Last Name is required.
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="FirstLastName">First Last Name</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="firstLastName">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'firstLastName') && formDir.submitted">
+        First Last Name is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Address">Address</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="address" data-val="true">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'address') && formDir.submitted">
+        Address is required
+      </span>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Phone">Phone</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="phone" data-val="true">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'phone') && formDir.submitted">
+        Phone is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="SecondContact">Second Contact</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="secondContact" data-val="true">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'secondContact') && formDir.submitted">
+        Second Contact is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Email">Email</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="email" data-val="true">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'email') && formDir.submitted">
+        Email is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Password">Password</label>
+      <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="password" data-val="true">
+      </div>
+      <span class="text-danger" *ngIf="usersForm.hasError('required', 'password') && formDir.submitted">
+        Password is required
+      </span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Save</button>
+      <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</body>
+</html>
