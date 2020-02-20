@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SupervisorComponent } from './supervisor/supervisor.component';
+import { SupportListComponent } from './support-list/support-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SupervisorComponent } from './supervisor/supervisor.component';
     HomeComponent,
     IssueListComponent,
     CreateUserComponent,
-    SupervisorComponent
+    SupervisorComponent,
+    SupportListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { SupervisorComponent } from './supervisor/supervisor.component';
       { path: '', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
       { path: 'supervisor', component: SupervisorComponent },
+      { path: 'support-list', component: SupportListComponent },
       { path: '', component: CreateUserComponent},
     ])
   ],
