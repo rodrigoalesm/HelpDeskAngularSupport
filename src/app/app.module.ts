@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SupervisorComponent } from './supervisor/supervisor.component';
+import { SupportListComponent } from './support-list/support-list.component';
 
 import { BasicAuthInterceptor } from './helpers/basic-auth.interceptors';
 import { ErrorInterceptor } from './helpers/error.interceptors';
@@ -25,7 +26,8 @@ import { UserService } from './services/user.service';
     HomeComponent,
     IssueListComponent,
     CreateUserComponent,
-    SupervisorComponent
+    SupervisorComponent,
+    SupportListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { UserService } from './services/user.service';
       { path: '', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
       { path: 'supervisor', component: SupervisorComponent },
+      { path: 'support-list', component: SupportListComponent },
       { path: '', component: CreateUserComponent},
     ])
   ],
