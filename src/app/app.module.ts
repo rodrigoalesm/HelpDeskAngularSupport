@@ -14,6 +14,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SupervisorComponent } from './supervisor/supervisor.component';
 
+import { BasicAuthInterceptor } from './helpers/basic-auth.interceptors';
+import { ErrorInterceptor } from './helpers/error.interceptors';
+import { UserService } from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,8 @@ import { SupervisorComponent } from './supervisor/supervisor.component';
       { path: '', component: CreateUserComponent},
     ])
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

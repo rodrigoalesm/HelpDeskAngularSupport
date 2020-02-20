@@ -4,19 +4,18 @@
     </mat-toolbar>
     <mat-card class="fc-card">
         <mat-card-content>
-            <form class="fc-form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+            <form class="fc-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Input Email" [formControl]="username" required [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                <input matInput placeholder="Input Email" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Email is required</div>
-                  </div>
-                <mat-error></mat-error>
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
             </mat-form-field>
             <br>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Password</mat-label> 
-                <input matInput type="password" placeholder="Input Password" [formControl]="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <input matInput type="password" placeholder="Input Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
                   </div>
