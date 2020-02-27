@@ -2,7 +2,7 @@ import { Component, Inject, ErrorHandler, ViewChild, OnInit } from '@angular/cor
 import { HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IssueService } from '../services/issue.service'
-import {MatSort} from '@angular/material/sort';
+import {MatSort, MatPaginator} from '@angular/material';
 import {MatTableDataSource} from '@angular/material/table';
 
 
@@ -14,11 +14,8 @@ import {MatTableDataSource} from '@angular/material/table';
 
 
 export class IssueListComponent {
-  
 
   public issueList: IssueData[];
-
-  dataSource: MatTableDataSource<IssueData>;
 
   constructor(public http: HttpClient, private _router: Router, private _issueService: IssueService) {
     this.getIssues();

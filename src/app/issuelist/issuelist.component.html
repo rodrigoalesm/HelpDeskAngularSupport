@@ -19,7 +19,6 @@
         <th>Issue Id</th>
         <th>Description</th>
         <th>TimeStamp</th>
-        <th>Classification</th>
         <th>Status</th>
         <th>Service Type</th>
         <th></th>
@@ -27,12 +26,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let issue of issueList">
-        <td width="5%">{{ issue.Id }}</td>
+        <td width="13%">{{ issue.Id }}</td>
         <td width="40%">{{ issue.Description }}</td>
         <td width="15%">{{ issue.Time_Stamp }}</td>
-        <td width="10%">{{ issue.Classification }}</td>
         <td width="15%">{{ issue.Status }}</td>
-        <td width="15%">{{ issue.Service_Type }}</td>
+        <td width="17%">{{ issue.Service_Type }}</td>
         <td>
             <a [routerLink]="['/issue/',issue.IssueId]"> Details </a>
         </td>

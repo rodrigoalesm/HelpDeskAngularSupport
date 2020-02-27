@@ -15,10 +15,12 @@ export class ErrorInterceptor implements HttpInterceptor {
                 // auto logout if 401 response returned from api
                 this.authenticationService.logout();
                 location.reload(true);
+                const error = err.error.message || err.statusText;
+                return throwError(error);
+            }else if(err.status === 400){
+                const error = 'Invalid credentials, please try again';
+                return throwError(error);
             }
-
-            const error = err.error.message || err.statusText;
-            return throwError(error);
         }))
     }
 }
