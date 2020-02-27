@@ -14,7 +14,7 @@ constructor(private _http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
 }
 
 saveUser(user){
-return this._http.post('http://localhost:44371/api/users/', user).pipe(map((res: any) => {
+return this._http.post('http://localhost:44371/api/user/', user).pipe(map((res: any) => {
     console.log('res', res)
     return res;
   }));
