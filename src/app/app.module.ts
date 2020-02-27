@@ -17,7 +17,6 @@ import { SupportListComponent } from './support-list/support-list.component';
 
 import { BasicAuthInterceptor } from './helpers/basic-auth.interceptors';
 import { ErrorInterceptor } from './helpers/error.interceptors';
-import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,7 @@ import { UserService } from './services/user.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: LoginComponent },
+      { path: 'add-user', component: LoginComponent },
       { path: 'issue-list', component: IssueListComponent },
       { path: 'supervisor', component: SupervisorComponent },
       { path: 'support-list', component: SupportListComponent },
