@@ -7,7 +7,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
-    return this.http.post<any>("https://localhost:44371/api/users", { email, password })
+    return this.http.post<any>("http://localhost:44371/api/users", { email, password })
       .pipe(map(user => {
         // login successful if there's a user in the response
         if (user) {
